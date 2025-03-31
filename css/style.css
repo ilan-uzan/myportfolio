@@ -1,0 +1,538 @@
+/* Import Fonts */
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+@import url('https://fonts.cdnfonts.com/css/apple-chancery');
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #F5F5F7;
+  color: #1D1D1F;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+}
+
+/* Navigation */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #1D1D1F;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1D1D1F;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0066CC;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #1D1D1F;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0066CC;
+}
+
+/* Card Styles - Home Page */
+.card-container {
+  margin: 50px auto;
+  perspective: 1000px;
+  width: 300px;
+  height: 420px;
+  max-width: 90%;
+  z-index: 1;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.card-back {
+  z-index: 2;
+}
+
+.card-front img, .card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.identity {
+  text-align: center;
+  margin-top: 40px;
+  animation: fadeIn 1.5s ease-in-out 1.5s forwards;
+  opacity: 0;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.quote {
+  font-family: 'Apple Chancery', cursive;
+  font-size: 1.5rem;
+  color: #777;
+  margin-bottom: 30px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Page Content */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.project-tech {
+  font-size: 0.9rem;
+  color: #0066CC;
+}
+
+/* Tech Stack */
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.tech-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Timeline - Experience */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #ddd;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-date {
+  font-weight: 600;
+  color: #0066CC;
+  margin-bottom: 10px;
+}
+
+/* About Me */
+.bio {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Footer */
+footer {
+  background-color: #F5F5F7;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  border-top: 1px solid #ddd;
+}
+
+/* Responsive Design - Enhanced for All Screen Sizes */
+
+/* Large Desktop Screens (>1200px) */
+@media (min-width: 1201px) {
+  .container {
+    padding: 40px;
+  }
+  
+  .card-container {
+    margin: 60px auto;
+    width: 340px;
+    height: 476px;
+  }
+  
+  .name {
+    font-size: 3.5rem;
+  }
+  
+  .quote {
+    font-size: 1.8rem;
+  }
+}
+
+/* Standard Desktop Screens (992px - 1200px) */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .nav-links {
+    gap: 25px;
+  }
+}
+
+/* Tablet Landscape (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .name {
+    font-size: 2.8rem;
+  }
+  
+  .quote {
+    font-size: 1.4rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet Portrait (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .name {
+    font-size: 2.5rem;
+  }
+  
+  .quote {
+    font-size: 1.3rem;
+  }
+  
+  .timeline::after {
+    left: 31px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 20px;
+  }
+  
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .page-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .tech-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (< 576px) */
+@media (max-width: 575px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .social-links {
+    margin-top: 10px;
+  }
+  
+  .card-container {
+    width: 240px;
+    height: 336px;
+    margin: 30px auto;
+  }
+  
+  .card {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .name {
+    font-size: 2rem;
+  }
+  
+  .quote {
+    font-size: 1.1rem;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .timeline::after {
+    left: 21px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 10px;
+  }
+  
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  
+  .timeline-content {
+    padding: 15px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .tech-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .bio {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Extra Small Mobile Devices (<375px) */
+@media (max-width: 374px) {
+  .card-container {
+    width: 210px;
+    height: 294px;
+  }
+  
+  .name {
+    font-size: 1.8rem;
+  }
+  
+  .quote {
+    font-size: 1rem;
+  }
+  
+  .nav-links {
+    font-size: 0.9rem;
+  }
+} 
