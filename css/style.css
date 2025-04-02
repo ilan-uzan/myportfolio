@@ -325,6 +325,48 @@ footer {
   border-top: 1px solid #ddd;
 }
 
+/* Folder Cards */
+.folder-card {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0066CC;
+}
+
+.folder-card .project-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.folder-card .project-title i {
+  color: #0066CC;
+  font-size: 1.2em;
+}
+
+.project-link {
+  margin-bottom: 15px;
+}
+
+.project-link a {
+  display: inline-flex;
+  align-items: center;
+  color: #0066CC;
+  text-decoration: none;
+  font-weight: 500;
+  gap: 5px;
+  transition: color 0.2s ease;
+}
+
+.project-link a:hover {
+  color: #004999;
+  text-decoration: underline;
+}
+
+.project-link a:hover::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 4px;
+}
+
 /* Responsive Design - Enhanced for All Screen Sizes */
 
 /* Large Desktop Screens (>1200px) */
